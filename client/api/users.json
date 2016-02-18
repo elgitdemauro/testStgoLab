@@ -1,0 +1,12 @@
+[
+  {
+    "email"   : "mauro@1984.cl",
+    "select"  : "number 2",
+    "radio"   : "blue"
+  },
+  {
+    "email"   : "correo@gmail.com",
+    "select"  : "number 1",
+    "radio"   : "green"
+  }
+]

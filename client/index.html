@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html ng-app="AppSantiagoTest">
+<head>
+	<meta charset="UTF-8">
+	<title>Test SantiagoLab</title>
+	<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../bower_components/animate.css/animate.min.css">
+	<link rel="stylesheet" href="app.css">
+</head>
+<body ng-controller="stgoCtrl">
+	<div class="container">
+		<div class="form col-sm-6 col-sm-offset-3 animated fadeIn">
+			<h1>Test SantiagoLab</h1> 
+				
+			<form name="formValidate" id="formStgoLab">
+			
+				<div class="form-group">
+					<label>Email</label> 
+					<input 
+						type="text" 
+						class="form-control" 
+						name="emailSubmitOnly" 
+						ng-model="formStgoLab.email" 
+						placeholder="user@company.cl"
+						validator="email" 
+						valid-method="blur" 
+						email-error-message="Required"
+						email-success-message="<i class='glyphicon glyphicon-ok'></i> {{formStgoLab.email}}"
+						message-id="emailSubmitOnly"/>
+					<span id="emailSubmitOnly"></span>
+				</div>
+
+				<div class="form-group">
+					<label>Number</label> 
+					<select 
+						class="form-control" 
+						name="selectBlur" 
+						ng-model="formStgoLab.select" 
+						validator="required" 
+						required-error-message="Required"
+						required-success-message="<i class='glyphicon glyphicon-ok'></i> {{formStgoLab.select}}"
+						message-id="selectBlur">
+						<option value="">- Select number -</option>
+						<option>number 1</option>
+						<option>number 2</option>
+						<option>number 3</option>
+					</select>
+					<span id="selectBlur"></span>
+				</div>
+
+				<div class="form-group">
+					<label>Color</label> 
+					<div class="radio green">
+						<input 
+							id="green" 
+							type="radio" 
+							name="radioBlur" 
+							ng-model="formStgoLab.radio" 
+							validator="required" 
+							required-error-message="Required"
+							required-success-message="<i class='glyphicon glyphicon-ok'></i> {{formStgoLab.radio}}"
+							message-id="checkRadio" 
+							value="green"/>
+						<label for="green" class="{{formStgoLab.radio}}">green</label>
+					</div>
+					<div class="radio blue">
+						<input 
+							id="blue" 
+							type="radio" 
+							name="radioBlur" 
+							ng-model="formStgoLab.radio" 
+							validator="required" 
+							required-error-message="Required"
+							required-success-message="<i class='glyphicon glyphicon-ok'></i> {{formStgoLab.radio}}"
+							message-id="checkRadio" 
+							value="blue"/>
+						<label for="blue" class="{{formStgoLab.radio}}">blue</label>
+					</div>
+					<span id="checkRadio"></span>
+				</div>
+
+				<button class="btn btn-block btn-primary" ng-click="formStgoLab.submit(formValidate)">Submit</button>	
+				<a ng-href="/user.html" class="btn btn-block btn-default">User</a>
+			</form>
+		</div>
+	</div>
+	
+	
+	<script src="../node_modules/angular/angular.min.js"></script>
+	<script src="../node_modules/angular-local-storage/dist/angular-local-storage.min.js"></script>
+	<script src="../client/bower_components/angular-validation/dist/angular-validation.min.js"></script>
+	<script src="../client/bower_components/angular-validation/dist/angular-validation-rule.min.js"></script>
+	<script src="controller.min.js"></script>
+</body>
+</html>

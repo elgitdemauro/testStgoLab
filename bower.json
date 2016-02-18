@@ -1,0 +1,23 @@
+{
+  "name": "custom",
+  "description": "",
+  "main": "server.js",
+  "authors": [
+    "Mauro"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "animate.css": "^3.5.1",
+    "bootstrap": "^3.3.6",
+    "angular-validation": "^1.4.1"
+  }
+}

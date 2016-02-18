@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="AppSantiagoTest">
+<head>
+	<meta charset="UTF-8">
+	<title>/user SantiagoLab</title>
+	<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../bower_components/animate.css/animate.min.css">
+	<link rel="stylesheet" href="app.css">
+</head>
+<body ng-controller="stgoCtrl">
+	
+	<div class="container">
+		<div class="form col-sm-6 col-sm-offset-3 animated fadeIn">
+			<h1>Users</h1> 
+			
+			<table class="table">
+				<thead>
+					<th>Email</th>
+					<th>Number</th>
+					<th>Color</th>
+				</thead>
+				<tr ng-repeat="user in users">
+					<td>{{user.email}}</td>
+					<td>{{user.select}}</td>
+					<td>{{user.radio}}</td>
+				</tr>
+			</table>
+			
+			<a ng-href="/" class="btn btn-block btn-default">back</a>
+		</div>
+	</div>
+	
+	
+	<script src="../node_modules/angular/angular.min.js"></script>
+	<script src="../node_modules/angular-local-storage/dist/angular-local-storage.min.js"></script>
+	<script src="../client/bower_components/angular-validation/dist/angular-validation.min.js"></script>
+	<script src="../client/bower_components/angular-validation/dist/angular-validation-rule.min.js"></script>
+	<script src="controller.min.js"></script>
+</body>
+</html>
