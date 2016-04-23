@@ -1,6 +1,19 @@
+"use strict";
+
 angular
   .module('AppSantiagoTest', ['validation','validation.rule', 'LocalStorageModule'])
-  .controller('stgoCtrl', ['$scope', '$injector', '$http', 'localStorageService', function($scope, $injector, $http, localStorageService ) {
+
+  .service('Users', function($http){
+    this.getAll = function(success, failure){
+      $http.get('api/users.json').success(success).error(failure);
+    }
+  })
+
+  .controller('stgoCtrl', ['$scope', '$injector', '$http', 'localStorageService', 'Users', function($scope, $injector, $http, localStorageService, Users ) {
+
+    Users.getAll(function(data){
+      $scope.users = data.users;
+    });
 
     if (localStorageService.get('angular-user')) {
       $scope.users = localStorageService.get('angular-user');
